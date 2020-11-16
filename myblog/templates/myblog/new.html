@@ -1,4 +1,4 @@
-{% laod static %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -11,7 +11,15 @@
   </head>
   <body class="container">
     <h1 class="display-4 text-primary mb-4">{{title}}</h1>
-    <p class="h5">{{msg}}</p>
+    <p class="h5 mt-4">{{msg}}</p>
+    <form action="{% url 'new_topic_form' %}" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="topic_title">タイトル名：</label>
+        <input class="form-control" type="text" id="topit_title" name="topic_title">
+      </div>
+      <input class="btn btn-primary" type="submit" value="送信">
+    </form>
     <p class="h6"><a href="{% url goto %}">トップページ</a></p>
   </body>
 </html>
