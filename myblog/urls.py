@@ -1,8 +1,9 @@
+from django.conf.urls import url
 from django.urls import path
+from .views import NewTopicView
 from . import views
 
 urlpatterns = [
   path('', views.index, name='index'),
-  path('new', views.new, name='new'),
-  path('new_topic', views.new_topic_form, name='new_topic_form')
+  url(r'new', NewTopicView.as_view(), name='new'),
 ]
