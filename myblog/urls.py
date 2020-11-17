@@ -1,9 +1,8 @@
-from django.conf.urls import url
-# from django.urls import path
+from django.urls import path
 from .views import IndexView, NewTopicView
-from . import views
+# from . import views
 
 urlpatterns = [
-  url(r'', IndexView.as_view(), name='index'),
-  url(r'new', NewTopicView.as_view(), name='new'),
+  path('', IndexView.as_view(), name='index'),
+  path('new', NewTopicView.as_view(), name='new'),
 ]
