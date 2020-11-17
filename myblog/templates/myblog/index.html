@@ -1,38 +1,31 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <title>{{title}}</title>
-    <link rel="stylesheet" 
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
-    crossorigin="anonymous">
-  </head>
-  <body class="container">
-    <h1 class="display-4 text-primary mb-4">{{title}}</h1>
-    <p class="h5">{{msg}}</p>
-    <form action="{% url 'index' %}" method="post">
-      {% csrf_token %}
-      ID：{{form.id}}
-      <input type="submit" value="ID検索">
-    </form>
-    <hr>
-    <table class="table">
+{% extends 'myblog/layout.html' %}
+
+{% block title %}myblog{% endblock %}
+
+{% block content %}
+  <h1 class="display-4 text-primary mb-4">{{title}}</h1>
+  <p class="h5">{{msg}}</p>
+  <form action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+    ID：{{form.id}}
+    <input type="submit" value="ID検索">
+  </form>
+  <hr>
+  <table class="table">
+    <tr>
+      <th>ID</th>
+      <th>タイトル名</th>
+      <th>コンテンツ</th>
+    </tr>
+    <tr>
+      {% for item in data %}
       <tr>
-        <th>ID</th>
-        <th>タイトル名</th>
-        <th>コンテンツ</th>
+        <td>{{item.id}}</td>
+        <td>{{item.topic_title}}</td>
+        <td>{{item.content}}</td>
       </tr>
-      <tr>
-        {% for item in data %}
-        <tr>
-          <td>{{item.id}}</td>
-          <td>{{item.topic_title}}</td>
-          <td>{{item.content}}</td>
-        </tr>
-        {% endfor %}
-      </tr>
-    </table>
-    <p class="h6"><a href="{% url goto %}">新規作成</a></p>
-  </body>
-</html>
+      {% endfor %}
+    </tr>
+  </table>
+  <p class="h6"><a href="{% url goto %}">新規作成</a></p>
+{% endblock %}
