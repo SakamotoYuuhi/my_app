@@ -4,13 +4,13 @@
 
 {% block content %}
   <h1 class="display-4 text-primary mb-4">{{title}}</h1>
-  <span class="h5 mt-4">{{msg|safe}}</span><br>
   <span class="h5 mt-4">{{content|safe}}
-  <form action="{% url 'new' %}" method="post">
+  <form action="{% url 'create' %}" method="post">
     {% csrf_token %}
-      {{form.as_p}}
+      タイトル名: <br>{{form.topic_title}}
+      コンテンツ: <br>{{form.content}}
       <input class="btn btn-primary" type="submit" value="送信">
   </form>
   <p></p>
-  <p class="h6"><a href="{% url goto %}">トップページ</a></p>
+  <p class="h6"><a href="{% url 'index' %}">トップページ</a></p>
 {% endblock %}
