@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 
@@ -13,7 +13,7 @@ class IndexView(TemplateView):
       'msg': 'トピックタイトルの一覧',
       'data': [],
       'form': MyBlogForm(),
-      'goto': 'new',
+      'goto': 'cerate',
     }
   
   def get(self, request):
@@ -28,24 +28,23 @@ class IndexView(TemplateView):
     self.params['form'] = MyBlogForm(request.POST)
     return render(request, 'myblog/index.html', self.params)
 
+# create model
 class NewTopicView(TemplateView):
 
   def __init__(self):
     self.params = {
       'title': 'New Topic',
       'msg': '新しい記事タイトルを記入',
-      'content': '',
       'form': MyBlogForm(),
       'goto': 'index',
     }
 
   def get(self, request):
-    return render(request, 'myblog/new.html', self.params)
+    return render(request, 'myblog/create.html', self.params)
 
   def post(self, request):
     topic_title = request.POST['topic_title']
     content = request.POST['content']
-    self.params['msg'] = topic_title
-    self.params['content'] = content
-    self.params['form'] = MyBlogForm(request.POST)
-    return render(request, 'myblog/new.html', self.params)
+    mybog = MyBlog(topic_title=topic_title, content=content)
+    mybog.save()
+    return redirect(to='/myblog')
