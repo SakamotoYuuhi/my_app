@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 
-from .models import MyBlogModel
+from .models import MyBlog
 from .forms import MyBlogForm
 
 class IndexView(TemplateView):
@@ -17,13 +17,13 @@ class IndexView(TemplateView):
     }
   
   def get(self, request):
-    data = MyBlogModel.objects.all()
+    data = MyBlog.objects.all()
     self.params['data'] = data
     return render(request, 'myblog/index.html', self.params)
 
   def post(self, request):
     num = request.POST['id']
-    item = MyBlogModel.objects.get(id=num)
+    item = MyBlog.objects.get(id=num)
     self.params['data'] = [item]
     self.params['form'] = MyBlogForm(request.POST)
     return render(request, 'myblog/index.html', self.params)
