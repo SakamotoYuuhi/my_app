@@ -5,10 +5,11 @@
 
 {% block content %}
   <h1 class="display-4 text-primary mb-4">{{title}}</h1>
-  <form action="{% url 'create' %}" method="post">
+  <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
       タイトル名: <br>{{form.topic_title}}
       コンテンツ: <br>{{form.content|attr:"rows:8"}}
+      写真・画像: <br>{{form.image}}
       <p></p>
       <input class="btn btn-primary" type="submit" value="送信">
   </form>
