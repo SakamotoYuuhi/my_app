@@ -43,9 +43,7 @@ class NewTopicView(TemplateView):
     return render(request, 'myblog/create.html', self.params)
 
   def post(self, request):
-    topic_title = request.POST['topic_title']
-    content = request.POST['content']
-    image = request.FILES['image']
-    mybog = MyBlog(topic_title=topic_title, content=content, image=image)
-    mybog.save()
+    obj = MyBlog()
+    myblog = MyBlogForm(request.POST, request.FILES, instance=obj)
+    myblog.save()
     return redirect(to='/myblog')

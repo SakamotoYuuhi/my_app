@@ -7,11 +7,13 @@
   <h1 class="display-4 text-primary mb-4">{{title}}</h1>
   <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-      タイトル名: <br>{{form.topic_title}}
-      コンテンツ: <br>{{form.content|attr:"rows:8"}}
-      写真・画像: <br>{{form.image}}
+      <table class="table">
+        {{form.as_table}}
+        <tr><th><td>
+          <input class="btn btn-primary mt-2" type="submit" value="送信">
+        </td></th></tr>
+      </table>
       <p></p>
-      <input class="btn btn-primary" type="submit" value="送信">
   </form>
   <p></p>
   <p class="h6"><a href="{% url 'index' %}">トップページ</a></p>

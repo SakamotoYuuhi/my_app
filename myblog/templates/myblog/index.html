@@ -5,24 +5,18 @@
 {% block content %}
   <h1 class="display-4 text-primary mb-4">{{title}}</h1>
   <p class="h5">{{msg}}</p>
-  <form action="{% url 'index' %}" method="post">
-    {% csrf_token %}
-    ID：{{form.id}}
-    <input type="submit" value="ID検索">
-  </form>
-  <hr>
   <table class="table">
     <tr>
       <th>ID</th>
       <th>タイトル名</th>
-      <th>コンテンツ</th>
+      <th></th>
     </tr>
     <tr>
       {% for item in data %}
       <tr>
         <td>{{item.id}}</td>
         <td>{{item.topic_title}}</td>
-        <td>{{item.content}}</td>
+        <td>詳細</td>
       </tr>
       {% endfor %}
     </tr>
