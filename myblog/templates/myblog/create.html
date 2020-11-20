@@ -1,4 +1,5 @@
 {% extends 'myblog/layout.html' %}
+{% load widget_tweaks %}
 
 {% block title %}create_topic{% endblock %}
 
@@ -7,7 +8,8 @@
   <form action="{% url 'create' %}" method="post">
     {% csrf_token %}
       タイトル名: <br>{{form.topic_title}}
-      コンテンツ: <br>{{form.content}}
+      コンテンツ: <br>{{form.content|attr:"rows:8"}}
+      <p></p>
       <input class="btn btn-primary" type="submit" value="送信">
   </form>
   <p></p>
