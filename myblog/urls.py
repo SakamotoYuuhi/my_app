@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
   path('', IndexView.as_view(), name='index'),
+  path('<int:page>', IndexView.as_view(), name='index'),
   path('create', NewTopicView.as_view(), name='create'),
 ]
 

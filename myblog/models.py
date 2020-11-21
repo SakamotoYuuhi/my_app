@@ -10,6 +10,7 @@ class MyBlog(models.Model):
 
   class Meta:
     db_table = 'myblog'
+    ordering = ('id',)
 
   def __str__(self):
     return 'タイトル名:' + self.topic_title

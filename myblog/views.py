@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.views.generic import TemplateView
+from django.core.paginator import Paginator
 
 from .models import MyBlog
 from .forms import MyBlogForm
@@ -8,24 +9,15 @@ from .forms import MyBlogForm
 class IndexView(TemplateView):
 
   def __init__(self):
+    self.data = MyBlog.objects.reverse().all()
+    self.paginator = Paginator(self.data, 5)
     self.params = {
       'title': 'My Blog',
       'msg': 'トピックタイトルの一覧',
-      'data': [],
-      'form': MyBlogForm(),
-      'goto': 'cerate',
     }
   
-  def get(self, request):
-    data = MyBlog.objects.all()
-    self.params['data'] = data
-    return render(request, 'myblog/index.html', self.params)
-
-  def post(self, request):
-    num = request.POST['id']
-    item = MyBlog.objects.get(id=num)
-    self.params['data'] = [item]
-    self.params['form'] = MyBlogForm(request.POST)
+  def get(self, request, page=1):
+    self.params['data'] = self.paginator.get_page(page)
     return render(request, 'myblog/index.html', self.params)
 
 # create model
