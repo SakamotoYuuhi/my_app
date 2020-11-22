@@ -1,0 +1,15 @@
+{% extends 'myblog/layout.html' %}
+{% load widget_tweaks %}
+
+{% block title %}詳細ページ{% endblock %}
+
+{% block content %}
+<h1 class="display-4 text-primary mb-4">詳細ページ</h1>
+<p></p>
+{{datas.id}} <br>
+タイトル名: <br>{{datas.topic_title}} <br>
+コンテンツ: <br>{{datas.content}} <br>
+写真・画像: <br>{{datas.image}} <br>
+<p></p>
+<p class="h6"><a href="{% url 'index' %}">トップページ</a></p>
+{% endblock %}

@@ -1,10 +1,10 @@
 {% extends 'myblog/layout.html' %}
 
-{% block title %}myblog{% endblock %}
+{% block title %}トップページ{% endblock %}
 
 {% block content %}
-  <h1 class="display-4 text-primary mb-4">{{title}}</h1>
-  <p class="h5">{{msg}}</p>
+  <h1 class="display-4 text-primary mb-4">トップページ</h1>
+  <p class="h5">ID・タイトル名一覧</p>
   <table class="table">
     <tr>
       <th>ID</th>
@@ -12,11 +12,11 @@
       <th></th>
     </tr>
     <tr>
-      {% for item in data %}
+      {% for data in datas %}
       <tr>
-        <td>{{item.id}}</td>
-        <td>{{item.topic_title}}</td>
-        <td>詳細</td>
+        <td>{{data.id}}</td>
+        <td>{{data.topic_title}}</td>
+        <td><a href="{% url 'detail' data.pk %}">詳細</a></td>
       </tr>
       {% endfor %}
     </tr>

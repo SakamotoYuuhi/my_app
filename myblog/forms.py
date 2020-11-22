@@ -1,5 +1,5 @@
-from django.forms import widgets
-from myblog.models import MyBlog
+# from django.forms import widgets
+# from myblog.models import MyBlog
 from django import forms
 from .models import MyBlog
 

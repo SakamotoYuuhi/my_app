@@ -1,34 +1,26 @@
+from django.db.models.indexes import Index
 from django.shortcuts import redirect, render
-from django.http import HttpResponse
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView, DetailView
 from django.core.paginator import Paginator
 
 from .models import MyBlog
 from .forms import MyBlogForm
 
-class IndexView(TemplateView):
+class IndexView(ListView):
 
-  def __init__(self):
-    self.data = MyBlog.objects.reverse().all()
-    self.paginator = Paginator(self.data, 5)
-    self.params = {
-      'title': 'My Blog',
-      'msg': 'トピックタイトルの一覧',
-    }
-  
-  def get(self, request, page=1):
-    self.params['data'] = self.paginator.get_page(page)
-    return render(request, 'myblog/index.html', self.params)
+  queryset = MyBlog.objects.order_by('-id').all()
+  template_name = 'myblog/index.html' # デフォルトは モデル名_list.html
+  context_object_name = 'datas' # デフォルトはobject_list テンプレート側にデータを送る変数
+  paginate_by = 5 # ページネーションする時の1ページあたりの数
 
-# create model
-class NewTopicView(TemplateView):
+# 投稿ページの処理
+class CreateView(TemplateView):
 
   def __init__(self):
     self.params = {
-      'title': 'New Topic',
+      'title': '投稿ページ',
       'msg': '新しい記事タイトルを記入',
       'form': MyBlogForm(),
-      'goto': 'index',
     }
 
   def get(self, request):
@@ -39,3 +31,10 @@ class NewTopicView(TemplateView):
     myblog = MyBlogForm(request.POST, request.FILES, instance=obj)
     myblog.save()
     return redirect(to='/myblog')
+
+# 詳細ページの処理
+class DetailView(DetailView):
+  
+  model = MyBlog
+  template_name = 'myblog/detail.html'
+  context_object_name = 'datas' # デフォルトはobject_list テンプレート側にデータを送る変数
