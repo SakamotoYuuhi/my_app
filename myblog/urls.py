@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import IndexView, CreateView, DetailView
+from .views import IndexView, CreateView, DetailView, EditView, DeleteView
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -7,8 +7,10 @@ from django.conf.urls.static import static
 urlpatterns = [
   path('', IndexView.as_view(), name='index'),
   path('<int:page>', IndexView.as_view(), name='index'),
-  path('create', CreateView.as_view(), name='create'),
   path('detail/<int:pk>', DetailView.as_view(), name='detail'),
+  path('create', CreateView.as_view(), name='create'),
+  path('edit/<int:pk>', EditView.as_view(), name='edit'),
+  path('delete/<int:pk>', DeleteView.as_view(), name='delete'),
 ]
 
 # 画像アップロード用にsettings.pyにパスを通すために追記

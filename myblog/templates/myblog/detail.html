@@ -10,6 +10,9 @@ ID:{{datas.id}} <br>
 タイトル名: {{datas.topic_title}} <br>
 コンテンツ: <br>{{datas.content}} <br>
 写真・画像: <br>{{datas.image}} <br>
-<p></p>
+<p>
+  <a href="{% url 'edit' datas.pk %}">編集</a>
+  <a href="{% url 'delete' datas.pk %}">削除</a>
+</p>
 <p class="h6"><a href="{% url 'index' %}">トップページ</a></p>
 {% endblock %}

@@ -1,10 +1,10 @@
 {% extends 'myblog/layout.html' %}
 {% load widget_tweaks %}
 
-{% block title %}投稿ページ{% endblock %}
+{% block title %}{{title}}{% endblock %}
 
 {% block content %}
-  <h1 class="display-4 text-primary mb-4">投稿ページ</h1>
+  <h1 class="display-4 text-primary mb-4">{{title}}</h1>
   <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
       <table class="table">
