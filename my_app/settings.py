@@ -25,6 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '9f_ob=9c%@ji#^52@x+w#%3e!1h$vw+%0ibj7$$e!rfqj=5#n8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# インターネットに公開する場合はFalseにする
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -67,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
