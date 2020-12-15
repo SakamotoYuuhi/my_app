@@ -2,25 +2,26 @@
 
 {% block title %}トップページ{% endblock %}
 
+{% block index %}
+  <div class="jumbotron">
+    <h1 class="display-3">坂元のブログ</h1>
+    <p class="lead">私の最近の出来事や、学んだことのアウトプット用に使っています。<br>
+                    ちなみに、好きな言語はPythonなので、このブログもPythonで作成しています。</p>
+    <hr class="my-2">
+  </div>
+{% endblock %}
+
 {% block content %}
   <h1 class="display-4 text-primary mb-4">トップページ</h1>
-  <p class="h5">ID・タイトル名一覧</p>
-  <table class="table">
-    <tr>
-      <th>ID</th>
-      <th>タイトル名</th>
-      <th></th>
-    </tr>
-    <tr>
-      {% for data in datas %}
-      <tr>
-        <td>{{data.id}}</td>
-        <td>{{data.topic_title}}</td>
-        <td><a href="{% url 'detail' data.pk %}">詳細</a></td>
-      </tr>
-      {% endfor %}
-    </tr>
-  </table>
+    {% for data in datas %}
+    <div class="card mb-3">
+      <h2 class="card-header bg-dark text-white">{{data.topic_title}}</h2>
+      <div class="card-body">
+        <p>{{data.created_at}}</p>
+        <a href="{% url 'detail' data.pk %}" class="btn btn-primary">続きを読む</a>
+      </div>
+    </div>
+    {% endfor %}
   {% include 'myblog/pagination.html' %}
   <p class="h6"><a href="{% url 'create' %}">新規作成</a></p>
 {% endblock %}

@@ -8,8 +8,8 @@
 <p></p>
 ID:{{datas.id}} <br>
 タイトル名: {{datas.topic_title}} <br>
-コンテンツ: <br>{{datas.content}} <br>
-写真・画像: <br>{{datas.image}} <br>
+コンテンツ: <br>{{datas.content | linebreaksbr}} <br>
+写真・画像: <br><img src="{{MEDIA_URL}}{{datas.image}}"> <br>
 <p>
   <a href="{% url 'edit' datas.pk %}">編集</a>
   <a href="{% url 'delete' datas.pk %}">削除</a>

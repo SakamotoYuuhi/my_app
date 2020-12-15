@@ -1,7 +1,6 @@
-from django.shortcuts import redirect, render
 from django.urls import path, reverse_lazy
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import FormView, CreateView, UpdateView, DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from .models import MyBlog
 from .forms import MyBlogForm
