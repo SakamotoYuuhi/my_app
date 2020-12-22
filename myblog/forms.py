@@ -10,5 +10,5 @@ class MyBlogForm(forms.ModelForm):
     widgets = {
       'topic_title': forms.TextInput(attrs={'class':'form-control'}),
       'content': forms.Textarea(attrs={'class':'form-control'}),
-      'image': forms.ClearableFileInput(attrs={'multiple': True}),
+      'image': forms.ClearableFileInput(attrs={'class':'form-control-file','multiple': True}),
     }

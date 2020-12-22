@@ -1,9 +1,6 @@
 from django.urls import path
 from .views import IndexView, CreateView, DetailView, EditView, DeleteView
 
-from django.conf import settings
-from django.conf.urls.static import static
-
 urlpatterns = [
   path('', IndexView.as_view(), name='index'),
   path('<int:page>', IndexView.as_view(), name='index'),
@@ -12,6 +9,3 @@ urlpatterns = [
   path('edit/<int:pk>', EditView.as_view(), name='edit'),
   path('delete/<int:pk>', DeleteView.as_view(), name='delete'),
 ]
-
-# 画像アップロード用にsettings.pyにパスを通すために追記
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

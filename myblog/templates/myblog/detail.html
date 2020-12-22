@@ -9,7 +9,12 @@
 ID:{{datas.id}} <br>
 タイトル名: {{datas.topic_title}} <br>
 コンテンツ: <br>{{datas.content | linebreaksbr}} <br>
-写真・画像: <br><img src="{{MEDIA_URL}}{{datas.image}}"> <br>
+写真・画像: <br>
+{% if datas.image %}
+<div class="image">
+  <img src="{{datas.image.url}}" height="200px" width="200px"> <br>
+</div>
+{% endif %}
 <p>
   <a href="{% url 'edit' datas.pk %}">編集</a>
   <a href="{% url 'delete' datas.pk %}">削除</a>
