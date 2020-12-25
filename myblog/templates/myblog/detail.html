@@ -15,9 +15,11 @@ ID:{{datas.id}} <br>
   <img src="{{datas.image.url}}" height="200px" width="200px"> <br>
 </div>
 {% endif %}
-<p>
-  <a href="{% url 'edit' datas.pk %}">編集</a>
-  <a href="{% url 'delete' datas.pk %}">削除</a>
-</p>
+{% if user.is_authenticated %}
+  <p>
+    <a href="{% url 'edit' datas.pk %}">編集</a>
+    <a href="{% url 'delete' datas.pk %}">削除</a>
+  </p>
+{% endif %}
 <p class="h6"><a href="{% url 'index' %}">トップページ</a></p>
 {% endblock %}

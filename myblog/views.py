@@ -1,3 +1,5 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 from django.urls import path, reverse_lazy
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -18,10 +20,12 @@ class DetailView(DetailView):
   context_object_name = 'datas' # デフォルトはobject_list テンプレート側にデータを送る変数
 
 # 投稿ページの処理
-class CreateView(CreateView):
+class CreateView(LoginRequiredMixin, CreateView):
   template_name = 'myblog/create.html'
   form_class = MyBlogForm
   success_url = '/myblog/'
+
+  login_url = '/login'
 
   # このメソッドは、有効なフォームデータがPOSTされたときに呼び出される
   def form_valid(self, form):
@@ -29,11 +33,13 @@ class CreateView(CreateView):
     return super().form_valid(form)
 
 # 編集ページの処理
-class EditView(UpdateView):
+class EditView(LoginRequiredMixin, UpdateView):
   model = MyBlog
   template_name = 'myblog/edit.html'
   form_class = MyBlogForm
   context_object_name = 'datas' # デフォルトはobject_list テンプレート側にデータを送る変数
+
+  login_url = '/loginS'
 
   # このメソッドは、有効なフォームデータがPOSTされたときに呼び出される
   def form_valid(self, form):

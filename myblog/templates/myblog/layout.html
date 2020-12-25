@@ -9,29 +9,37 @@
     crossorigin="anonymous">
   </head>
   <body class="container">
-    <!-- このナビバーは後ほどリンク先やユーザ情報で修正する -->
+    <!-- ナビバー表示 -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">ブログ</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-    
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'index' %}">トップページ<span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'create' %}">新規作成</a>
-          </li>
+          {% if user.is_authenticated %}
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'create' %}">新規作成</a>
+            </li>
+          {% endif %}
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="検索" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">検索</button>
-        </form>
+        {% if user.is_authenticated %}
+          <!-- ログインしている場合、ログアウトボタンを表示 -->
+          <li style="color: white; list-style: none;">{{ user.username }}</li>
+          <li>
+            <a href="{% url 'logout' %}" style="color: white;">ログアウト</a>
+          </li>
+        {% else %}
+          <!-- ログインしていないのに場合、ログインボタンを表示 -->
+          <li style="list-style: none;">
+            <a href="{% url 'login' %}" style="color: white;">ログイン</a>
+          </li>
+        {% endif %}
       </div>
     </nav>
-    <!-- ナビバーはここまで -->
     {% block index %}
     {% endblock %}
     <div class="container">
@@ -40,9 +48,15 @@
           {% block content %}
           {% endblock %}
         </div>
+        {% if user.is_authenticated %}
         <div class="col-md-4">
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="検索" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">検索</button>
+          </form>
           カテゴリーの一覧
         </div>
+        {% endif %}
       </div>
     </div>
     <footer class="bg-dark text-white text-center py-3">
