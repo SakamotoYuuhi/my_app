@@ -17,26 +17,18 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'index' %}">トップページ<span class="sr-only">(current)</span></a>
-          </li>
+          <li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">トップページ<span class="sr-only">(current)</span></a></li>
           {% if user.is_authenticated %}
-            <li class="nav-item active">
-              <a class="nav-link" href="{% url 'create' %}">新規作成</a>
-            </li>
+            <li class="nav-item active"><a class="nav-link" href="{% url 'create' %}">新規作成</a></li>
           {% endif %}
         </ul>
         {% if user.is_authenticated %}
           <!-- ログインしている場合、ログアウトボタンを表示 -->
           <li style="color: white; list-style: none;">{{ user.username }}</li>
-          <li>
-            <a href="{% url 'logout' %}" style="color: white;">ログアウト</a>
-          </li>
+          <li><a href="{% url 'logout' %}" style="color: white;">ログアウト</a></li>
         {% else %}
           <!-- ログインしていないのに場合、ログインボタンを表示 -->
-          <li style="list-style: none;">
-            <a href="{% url 'login' %}" style="color: white;">ログイン</a>
-          </li>
+          <li style="list-style: none;"><a href="{% url 'login' %}?next={{ request.path }}" style="color: white;">ログイン</a></li>
         {% endif %}
       </div>
     </nav>
