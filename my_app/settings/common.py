@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+# 開発、環境共通のsettings
 from pathlib import Path
 import pymysql
 import os
@@ -23,13 +23,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '9f_ob=9c%@ji#^52@x+w#%3e!1h$vw+%0ibj7$$e!rfqj=5#n8'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-# インターネットに公開する場合はFalseにする
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
 
 # Application definition
 DJANGO_SETTINGS_MODULE="my_app.settings"
