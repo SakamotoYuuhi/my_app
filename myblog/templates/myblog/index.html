@@ -12,16 +12,22 @@
 {% endblock %}
 
 {% block content %}
-  <h1 class="display-4 text-primary mb-4">トップページ</h1>
-    {% for data in datas %}
-    <div class="card mb-3">
-      <h2 class="card-header bg-dark text-white">{{ data.topic_title }}</h2>
-      <div class="card-body">
-        <p>{{ data.created_at }} | {{ data.created_at | timesince }}</p>
-        <a href="{% url 'detail' data.pk %}" class="btn btn-primary">続きを読む</a>
-      </div>
+  <div class="row">
+    <div class="col-md-9">
+      <h1 class="display-4 text-primary mb-4">トップページ</h1>
+      {% for data in datas %}
+        <div class="card mb-3">
+          <h2 class="card-header bg-dark text-white">{{ data.topic_title }}</h2>
+          <div class="card-body">
+            <p>{{ data.created_at }} | {{ data.created_at | timesince }}</p>
+            <a href="{% url 'detail' data.pk %}" class="btn btn-primary">続きを読む</a>
+          </div>
+        </div>
+      {% endfor %}
+      {% include 'myblog/pagination.html' %}
     </div>
-    {% endfor %}
-  {% include 'myblog/pagination.html' %}
-  <p class="h6"><a href="{% url 'create' %}">新規作成</a></p>
+    <div class="col-md-3">
+      【その他のアプリケーション】
+    </div>
+  </div>  
 {% endblock %}
