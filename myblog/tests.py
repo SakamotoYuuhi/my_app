@@ -1,3 +1,8 @@
-from django.test import TestCase
+class MyBlogTestCase(TestCase):
 
-# Create your tests here.
+  def setUp(self):
+    self.c = Client()
+
+  def test_index_access(self):
+    res = self.c.get('/myblog/')
+    self.assertEqual(200, res.status_code)
