@@ -1,0 +1,25 @@
+{% extends 'myblog/layout.html' %}
+{% load widget_tweaks %}
+
+{% block title %}詳細ページ{% endblock %}
+
+{% block content %}
+<h1 class="display-4 text-primary mb-4">詳細ページ</h1>
+<p></p>
+ID:{{ datas.id }} <br>
+タイトル名: {{ datas.topic_title }} <br>
+コンテンツ: <br>{{ datas.content | linebreaksbr }} <br>
+写真・画像: <br>
+{% if datas.image %}
+<div class="image">
+  <img src="{{datas.image.url}}" height="200px" width="200px"> <br>
+</div>
+{% endif %}
+{% if user.is_authenticated and user == 'sakamotoyuuhi' %}
+  <p>
+    <a href="{% url 'edit' datas.pk %}">編集</a>
+    <a href="{% url 'delete' datas.pk %}">削除</a>
+  </p>
+{% endif %}
+<p class="h6"><a href="{% url 'index' %}">トップページ</a></p>
+{% endblock %}
