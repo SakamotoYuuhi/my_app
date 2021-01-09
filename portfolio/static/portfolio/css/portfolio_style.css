@@ -15,26 +15,49 @@ body {
   float: left;
 }
 /* メインの画像とコメント（ゆぴおのポートフォリオ） */
-.head {
+.main {
   position: relative;
 }
-#head_img {
+#main_img {
   width: 100vw;
   height: 85vh;
-  opacity: 0.3;
+  opacity: 0.6;
 }
-.head #title {
-  color: blueviolet;
+.main #main_title {
+  color: whitesmoke;
   position: absolute;
   top: 50%;
   left: 50%;
   font-weight: bold;
   font-size: 4em;
-  font-family :Quicksand, sans-serif;/*Google Font*/
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
   margin:0;
   padding:0;
   text-align: center;
+}
+/* スキル紹介と自己紹介 */
+#skill_check {
+  
+}
+#profile h2, #profile h3{
+  width: 280px;
+  text-align: center;
+}
+#profile img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+}
+/* フッター画面 */
+footer {
+  width: 100vw;
+  height: 50px;
+  color: white;
+  background-color: lime;
+  text-align: center;
+  position: relative;
+}
+footer span {
+  position: absolute;
+  top: 25%;
 }

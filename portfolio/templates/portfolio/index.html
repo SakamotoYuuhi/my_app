@@ -5,6 +5,12 @@
     <meta charset="utf-8">
     <title>ゆぴおのポートフォリオ</title>
     <link href="{% static 'portfolio/css/portfolio_style.css' %}" rel="stylesheet">
+    <link href="{% static 'portfolio/css/browser_icon.css' %}" rel="stylesheet">
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
@@ -16,8 +22,37 @@
         <li class="nav-list"><a href="#">Contact</a></li>
       </ul>
     </nav>
-    <div class="head">
-      <img id="head_img" src="{% static 'portfolio/image/portfolio_main_img.jpg' %}">
-      <h1 id="title">ゆぴおのポートフォリオ</h1>
+    <div class="main">
+      <img id="main_img" src="{% static 'portfolio/image/portfolio_main_img.jpg' %}">
+      <h1 id="main_title">ゆぴおのポートフォリオ</h1>
     </div>
+    <p>
+    <div class="container">
+      <div class="row">
+        <div id="skill_check" class="col-8">
+          <h2>プログラミングスキル</h2>
+        </div>
+        <div id="profile" class="col-4">
+          <div>
+            <h2>プロフィール</h2>
+            <img src="{% static 'portfolio/image/my_face_img.jpg' %}">
+            <h3>『ゆぴお』</h3>
+            <p>元塾講師（数学）。テクノロジーの進歩をきっかけに、ITエンジニアとして転職。
+              現在はシステム開発やPRAの自動化に注力している。</p>
+            <p>プライベートではPythonを学んでおり、ゆくゆくはデータ分析と機械学習の仕事に携わりたいと考えている。</p>
+            <p>座右の銘は【自分に価値を・人生に自由を】<br>
+            趣味は謎解き</p>
+            <ul class="follow-me">
+              <li><a href="https://twitter.com/yuuhi_sakamoto_"></a></li>
+              <li><a href="https://www.facebook.com"></a></li>
+              <li><a href="https://github.com/goodluckpenpen"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <span>©️ 2021 ゆぴお.</span>
+    </footer>
   </body>
+</html>
