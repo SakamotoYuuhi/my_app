@@ -2,9 +2,13 @@ body {
   background-color: honeydew;
 }
 /* ナビゲーションの調整 */
+.header {
+  position: fixed;
+  z-index: 2;
+}
 .navbar {
   width: 100vw;
-  height: 100px;
+  height: 70px;
   color: white;
   background-color: lime;
 }
@@ -19,6 +23,7 @@ body {
   position: relative;
 }
 #main_img {
+  margin-top: 70px;
   width: 100vw;
   height: 85vh;
   opacity: 0.6;
@@ -43,10 +48,11 @@ body {
   width: 280px;
   text-align: center;
 }
+/* 何故か円形で反映、一旦保留 */
 #profile img {
   width: 280px;
   height: 280px;
-  border-radius: 50%;
+  border-radius: 35%;
 }
 /* フッター画面 */
 footer {

@@ -14,14 +14,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
-    <nav class="navbar">
-      <ul>
-        <li class="nav-list"><a href="#">Top</a></li>
-        <li class="nav-list"><a href="#">Skill</a></li>
-        <li class="nav-list"><a href="#">The Work</a></li>
-        <li class="nav-list"><a href="#">Contact</a></li>
-      </ul>
-    </nav>
+    <header class="header">
+      <nav class="navbar">
+        <ul>
+          <li class="nav-list"><a href="#">Top</a></li>
+          <li class="nav-list"><a href="#">Skill</a></li>
+          <li class="nav-list"><a href="#">The Work</a></li>
+          <li class="nav-list"><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
     <div class="main">
       <img id="main_img" src="{% static 'portfolio/image/portfolio_main_img.jpg' %}">
       <h1 id="main_title">ゆぴおのポートフォリオ</h1>
@@ -35,7 +37,7 @@
         <div id="profile" class="col-4">
           <div>
             <h2>プロフィール</h2>
-            <img src="{% static 'portfolio/image/my_face_img.jpg' %}">
+            <img src="{% static 'portfolio/image/face_img.jpeg' %}">
             <h3>『ゆぴお』</h3>
             <p>元塾講師（数学）。テクノロジーの進歩をきっかけに、ITエンジニアとして転職。
               現在はシステム開発やPRAの自動化に注力している。</p>
