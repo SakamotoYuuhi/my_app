@@ -1,1 +1,23 @@
-<h1>ポートフォリオの作成</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>ゆぴおのポートフォリオ</title>
+    <link href="{% static 'portfolio/css/portfolio_style.css' %}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li class="nav-list"><a href="#">Top</a></li>
+        <li class="nav-list"><a href="#">Skill</a></li>
+        <li class="nav-list"><a href="#">The Work</a></li>
+        <li class="nav-list"><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="head">
+      <img id="head_img" src="{% static 'portfolio/image/portfolio_main_img.jpg' %}">
+      <h1 id="title">ゆぴおのポートフォリオ</h1>
+    </div>
+  </body>
