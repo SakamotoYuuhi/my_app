@@ -8,7 +8,7 @@ body {
 }
 .navbar {
   width: 100vw;
-  height: 70px;
+  height: 75px;
   color: white;
   background-color: lime;
 }
@@ -23,9 +23,9 @@ body {
   position: relative;
 }
 #main_img {
-  margin-top: 70px;
+  margin-top: 0px;
   width: 100vw;
-  height: 85vh;
+  height: 100vh;
   opacity: 0.6;
 }
 .main #main_title {
@@ -42,13 +42,30 @@ body {
 }
 /* スキル紹介と自己紹介 */
 #skill_check {
-  
+  position: relative;
+	overflow: hidden;
+  text-align: center;
+}
+#skill_check ul {
+  margin-top: 10px;
+  position: relative;
+	left: 5%;
+	float: left;
+}
+#skill_check li {
+  font-size: 20px;
+  margin-right: 120px;
+  list-style-type:none;
+  display:inline;
+  float: left;
+}
+.skill_text_size {
+  font-size: 25px;
 }
 #profile h2, #profile h3{
   width: 280px;
   text-align: center;
 }
-/* 何故か円形で反映、一旦保留 */
 #profile img {
   width: 280px;
   height: 280px;
