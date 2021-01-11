@@ -17,10 +17,10 @@
     <header class="header">
       <nav class="navbar">
         <ul>
-          <li class="nav-list"><a href="#">Top</a></li>
-          <li class="nav-list"><a href="#">Skill</a></li>
-          <li class="nav-list"><a href="#">The Work</a></li>
-          <li class="nav-list"><a href="#">Contact</a></li>
+          <li><a href="#">Top</a></li>
+          <li><a href="#">Skill</a></li>
+          <li><a href="#">The Work</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -28,12 +28,11 @@
       <img id="main_img" src="{% static 'portfolio/image/portfolio_main_img.jpg' %}">
       <h1 id="main_title">ゆぴおのポートフォリオ</h1>
     </div>
-    <p>
     <div class="container">
       <div class="row">
         <!-- 自分のプログラミングスキルを記載 -->
-        <div id="skill_check" class="col-8">
-          <h2>プログラミングスキル</h2>
+        <div id="skill_introduction" class="col-8">
+          <h2>Skill</h2>
           <ul>
             <li>
               <p>技術</p><br>
@@ -72,7 +71,7 @@
         <!-- プロフィールを記載 -->
         <div id="profile" class="col-4">
           <div>
-            <h2>プロフィール</h2>
+            <h2>Profile</h2>
             <img src="{% static 'portfolio/image/face_img.jpeg' %}">
             <h3>『ゆぴお』</h3>
             <p>元塾講師（数学）。テクノロジーの進歩をきっかけに、ITエンジニアとして転職。
@@ -83,10 +82,17 @@
             <ul class="follow-me">
               <!-- 新規タブで開く_blankと脆弱性の対策のnoopenerとnoreferrer -->
               <li><a href="https://twitter.com/yuuhi_sakamoto_" target="_blank" rel="noopener noreferrer"></a></li>
-              <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"></a></li>
+              <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"></a></li>
               <li><a href="https://github.com/goodluckpenpen" target="_blank" rel="noopener noreferrer"></a></li>
             </ul>
           </div>
+        </div>
+        <!-- 自分の作品紹介 -->
+        <div class="work_introduction">
+          <h2>The Work</h2>
+          <ul>
+            
+          </ul>
         </div>
       </div>
     </div>
