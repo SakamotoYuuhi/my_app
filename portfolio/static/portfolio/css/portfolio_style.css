@@ -91,6 +91,14 @@ body {
 .work_introduction h2 {
   text-align: center;
 }
+/* 連絡用フォーム */
+.contact_form {
+  width: 100vw;
+  margin-top: 30px;
+}
+.contact_form h2 {
+  text-align: center;
+}
 /* フッター画面 */
 footer {
   width: 100vw;
