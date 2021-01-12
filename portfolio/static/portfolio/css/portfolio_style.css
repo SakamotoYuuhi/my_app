@@ -95,12 +95,14 @@ body {
 .contact_form {
   width: 100vw;
   margin-top: 30px;
-}
-.contact_form h2 {
   text-align: center;
+}
+button#contact_submit {
+  font-size: 1.4em;
 }
 /* フッター画面 */
 footer {
+  margin-top: 30px;
   width: 100vw;
   height: 50px;
   color: white;

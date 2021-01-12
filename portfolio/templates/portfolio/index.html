@@ -98,6 +98,11 @@
         <!-- 連絡用フォーム -->
         <div id="contact_form" class="contact_form">
           <h2>Contact</h2>
+          <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button id="contact_submit" type="submit" class="btn btn-primary">送信</button>
+          </form>
         </div>
       </div>
     </div>
