@@ -3,3 +3,4 @@ from .common import *
 
 # 開発用settings
 DEBUG = True
+

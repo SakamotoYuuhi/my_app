@@ -1,0 +1,126 @@
+body {
+  background-color: honeydew;
+}
+/* ナビゲーションの調整 */
+.header {
+  position: fixed;
+  z-index: 2;
+}
+.navbar {
+  width: 100vw;
+  height: 75px;
+  background-color: lime;
+}
+.navbar ul {
+  position: relative;
+  left: 50%;
+  font-size: 30px;
+	float: left;
+}
+.navbar li {
+  margin-top: 10px;
+  margin-right: 100px;
+  text-decoration: underline;
+  position: relative;
+	left: -50%;
+  list-style-type: none;
+  float: left;
+}
+.navbar li a {
+  color: white;
+}
+/* メインの画像とコメント（ゆぴおのポートフォリオ） */
+.main {
+  position: relative;
+}
+#main_img {
+  margin-top: 0px;
+  margin-bottom: 30px;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.6;
+}
+.main #main_title {
+  color: whitesmoke;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-weight: bold;
+  font-size: 4em;
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  text-align: center;
+}
+/* スキル紹介 */
+.introduction {
+  background-color: white;
+  position: relative;
+	overflow: hidden;
+  text-align: center;
+}
+.introduction ul {
+  margin-top: 10px;
+  position: relative;
+	left: 5%;
+	float: left;
+}
+.introduction li {
+  font-size: 20px;
+  margin-right: 120px;
+  list-style-type:none;
+  display:inline;
+  float: left;
+}
+.skill_text_size {
+  font-size: 25px;
+}
+/* 作品紹介 */
+#work_introduction {
+  margin-top: 30px;
+}
+#work_introduction h2 {
+  text-align: center;
+}
+/* 連絡用フォーム */
+#contact_form {
+  margin-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+#contact_form p {
+  width: 80%;
+  margin-left: 10%;
+}
+button#contact_submit {
+  font-size: 1.4em;
+}
+/* 自己紹介 */
+#profile h2, #profile h3{
+  width: 350px;
+  text-align: center;
+}
+#profile img {
+  width: 250px;
+  height: 250px;
+  margin-left: 50px;
+  border-radius: 35%;
+}
+.profile {
+  background-color: white;
+}
+/* フッター画面 */
+footer {
+  margin-top: 30px;
+  width: 100vw;
+  height: 50px;
+  color: white;
+  background-color: lime;
+  text-align: center;
+  position: relative;
+}
+footer span {
+  position: absolute;
+  left: 46%;
+  top: 25%;
+}

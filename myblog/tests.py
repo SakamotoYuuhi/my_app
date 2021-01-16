@@ -1,3 +1,5 @@
+from django.test import TestCase, Client
+
 class MyBlogTestCase(TestCase):
 
   def setUp(self):

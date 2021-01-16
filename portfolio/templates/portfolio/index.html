@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>ゆぴおのポートフォリオ</title>
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+    crossorigin="anonymous">
+    <link href="{% static 'portfolio/css/portfolio_style.css' %}" rel="stylesheet">
+    <link href="{% static 'portfolio/css/browser_icon.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'portfolio/js/portfolio_jquery.min.js' %}"></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <ul>
+          <li><a href="#main">Top</a></li>
+          <li><a href="#skill_introduction">Skill</a></li>
+          <li><a href="#work_introduction">The Work</a></li>
+          <li><a href="#contact_form">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="main" class="main">
+      <img id="main_img" src="{% static 'portfolio/image/portfolio_main_img.jpg' %}">
+      <h1 id="main_title">ゆぴおのポートフォリオ</h1>
+    </div>
+    <div class="container">
+      <div class="row">
+        <!-- 自分のプログラミングスキルを記載 -->
+        <div class="col-8">
+          <div id="skill_introduction" class="introduction">
+            <h2>Skill</h2>
+            <ul>
+              <li>
+                <p>技術</p><br>
+                <p class="skill_text_size">HTML,CSS</p>
+                <p class="skill_text_size">JavaScript</p>
+                <p class="skill_text_size">Java</p>
+                <p class="skill_text_size">Python</p>
+                <p class="skill_text_size">VB.NET</p>
+                <p class="skill_text_size">MySQL</p>
+                <P class="skill_text_size">SQLserver</P>
+              </li>
+              <li>
+                <p>経歴年数</p><br>
+                <p class="skill_text_size">３ヶ月</p>
+                <p class="skill_text_size">３ヶ月</p>
+                <p class="skill_text_size">２ヶ月</p>
+                <p class="skill_text_size">５ヶ月</p>
+                <p class="skill_text_size">２ヶ月</p>
+                <p class="skill_text_size">５ヶ月</p>
+                <p class="skill_text_size">２ヶ月</p>
+              </li>
+              <li>
+                <p>スキル</p><br>
+                <p class="skill_text_size">★★☆☆☆</p>
+                <p class="skill_text_size">★★☆☆☆</p>
+                <p class="skill_text_size">★★☆☆☆</p>
+                <p class="skill_text_size">★★★☆☆</p>
+                <p class="skill_text_size">★☆☆☆☆</p>
+                <p class="skill_text_size">★★☆☆☆</p>
+                <p class="skill_text_size">★☆☆☆☆</p>
+              </li>
+            </ul>
+            <h2>保有資格</h2>
+            <p class="skill_text_size">ITパスポート</p>
+          </div>
+          <!-- 自分の作品紹介 -->
+          <div id ="work_introduction" class="introduction">
+            <h2>The Work</h2>
+            <ul>
+              
+            </ul>
+          </div>
+          <!-- 連絡用フォーム -->
+          <div id="contact_form" class="introduction">
+            <h2>Contact</h2>
+            <div class="contact">
+              <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button id="contact_submit" type="submit" class="btn btn-primary">送信</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- プロフィールを記載 -->
+        <div id="profile" class="col-4">
+          <div class="profile">
+            <h2>Profile</h2>
+            <img src="{% static 'portfolio/image/face_img.jpeg' %}">
+            <h3>『ゆぴお』</h3>
+            <p>元塾講師（数学）。テクノロジーの進歩をきっかけに、ITエンジニアとして転職。
+              現在はシステム開発やPRAの自動化に注力している。</p>
+            <p>プライベートではPythonを学んでおり、ゆくゆくはデータ分析と機械学習の仕事に携わりたいと考えている。</p>
+            <p>座右の銘は【自分に価値を・人生に自由を】<br>
+            趣味は謎解き</p>
+            <ul class="follow-me">
+              <!-- 新規タブで開く_blankと脆弱性の対策のnoopenerとnoreferrer -->
+              <li><a href="https://twitter.com/yuuhi_sakamoto_" target="_blank" rel="noopener noreferrer"></a></li>
+              <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"></a></li>
+              <li><a href="https://github.com/goodluckpenpen" target="_blank" rel="noopener noreferrer"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <span>©️ 2021 ゆぴお.</span>
+    </footer>
+  </body>
+</html>
