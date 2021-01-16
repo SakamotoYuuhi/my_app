@@ -4,12 +4,12 @@
   <head>
     <meta charset="utf-8">
     <title>ゆぴおのポートフォリオ</title>
-    <link href="{% static 'portfolio/css/portfolio_style.css' %}" rel="stylesheet">
-    <link href="{% static 'portfolio/css/browser_icon.css' %}" rel="stylesheet">
     <link rel="stylesheet" 
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
     crossorigin="anonymous">
+    <link href="{% static 'portfolio/css/portfolio_style.css' %}" rel="stylesheet">
+    <link href="{% static 'portfolio/css/browser_icon.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="{% static 'portfolio/js/portfolio_jquery.min.js' %}"></script>
@@ -68,6 +68,22 @@
           </ul>
           <h2>保有資格</h2>
           <p class="skill_text_size">ITパスポート</p>
+          <!-- 自分の作品紹介 -->
+          <div id ="work_introduction" class="work_introduction">
+            <h2>The Work</h2>
+            <ul>
+              
+            </ul>
+          </div>
+          <!-- 連絡用フォーム -->
+          <div id="contact_form" class="contact_form">
+            <h2>Contact</h2>
+            <form method="POST">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button id="contact_submit" type="submit" class="btn btn-primary">送信</button>
+            </form>
+          </div>
         </div>
         <!-- プロフィールを記載 -->
         <div id="profile" class="col-4">
@@ -88,22 +104,7 @@
             </ul>
           </div>
         </div>
-        <!-- 自分の作品紹介 -->
-        <div id ="work_introduction" class="work_introduction">
-          <h2>The Work</h2>
-          <ul>
-            
-          </ul>
-        </div>
-        <!-- 連絡用フォーム -->
-        <div id="contact_form" class="contact_form">
-          <h2>Contact</h2>
-          <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button id="contact_submit" type="submit" class="btn btn-primary">送信</button>
-          </form>
-        </div>
+        
       </div>
     </div>
     <footer>

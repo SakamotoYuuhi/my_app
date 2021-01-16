@@ -52,7 +52,7 @@ body {
   padding:0;
   text-align: center;
 }
-/* スキル紹介と自己紹介 */
+/* スキル紹介 */
 #skill_introduction {
   position: relative;
 	overflow: hidden;
@@ -74,6 +74,22 @@ body {
 .skill_text_size {
   font-size: 25px;
 }
+/* 作品紹介 */
+.work_introduction {
+  margin-top: 30px;
+}
+.work_introduction h2 {
+  text-align: center;
+}
+/* 連絡用フォーム */
+.contact_form {
+  margin-top: 30px;
+  text-align: center;
+}
+button#contact_submit {
+  font-size: 1.4em;
+}
+/* 自己紹介 */
 #profile h2, #profile h3{
   width: 280px;
   text-align: center;
@@ -82,23 +98,6 @@ body {
   width: 280px;
   height: 280px;
   border-radius: 35%;
-}
-.work_introduction {
-  width: 100vw;
-  margin-top: 30px;
-}
-/* 作品紹介 */
-.work_introduction h2 {
-  text-align: center;
-}
-/* 連絡用フォーム */
-.contact_form {
-  width: 100vw;
-  margin-top: 30px;
-  text-align: center;
-}
-button#contact_submit {
-  font-size: 1.4em;
 }
 /* フッター画面 */
 footer {
