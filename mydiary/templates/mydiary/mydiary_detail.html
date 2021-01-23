@@ -1,4 +1,4 @@
-{% extends 'myblog/layout.html' %}
+{% extends 'mydiary/layout.html' %}
 {% load widget_tweaks %}
 
 {% block title %}詳細ページ{% endblock %}
@@ -9,13 +9,13 @@
 ID:{{ datas.id }} <br>
 タイトル名: {{ datas.topic_title }} <br>
 コンテンツ: <br>{{ datas.content | linebreaksbr }} <br>
-写真・画像: <br>
 {% if datas.image %}
+写真・画像: <br>
 <div class="image">
   <img src="{{datas.image.url}}" height="200px" width="200px"> <br>
 </div>
 {% endif %}
-{% if user.is_authenticated and user == 'sakamotoyuuhi' %}
+{% if user.is_authenticated and user.username == 'sakamotoyuuhi' %}
   <p>
     <a href="{% url 'mydiary_edit' datas.pk %}">編集</a>
     <a href="{% url 'mydiary_delete' datas.pk %}">削除</a>

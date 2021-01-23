@@ -17,9 +17,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">トップページ<span class="sr-only">(current)</span></a></li>
+          <li class="nav-item active"><a class="nav-link" href="{% url 'mydiary_index' %}">トップページ<span class="sr-only">(current)</span></a></li>
           {% if user.is_authenticated %}
-            <li class="nav-item active"><a class="nav-link" href="{% url 'create' %}">新規作成</a></li>
+            <li class="nav-item active"><a class="nav-link" href="{% url 'mydiary_create' %}">新規作成</a></li>
           {% endif %}
         </ul>
         {% if user.is_authenticated %}

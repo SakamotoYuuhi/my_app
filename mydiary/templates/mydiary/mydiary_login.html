@@ -1,9 +1,9 @@
-{% extends 'myblog/layout.html' %}
+{% extends 'mydiary/layout.html' %}
 
 {% block title %}ログインページ{% endblock %}
 
 {% block content %}
-  <form action="{% url 'mydiary_login' %}" method="post">
+  <form action="{% url 'login' %}" method="post">
     {% csrf_token %}
     <table class="table">
       {{ form }}

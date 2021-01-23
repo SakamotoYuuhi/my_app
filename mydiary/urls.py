@@ -9,6 +9,6 @@ urlpatterns = [
   path('mydiary_create', CreateView.as_view(), name='mydiary_create'),
   path('mydiary_edit/<int:pk>', EditView.as_view(), name='mydiary_edit'),
   path('mydiary_delete/<int:pk>', DeleteView.as_view(), name='mydiary_delete'),
-  path('mydiary_login', LoginView.as_view(template_name='myblog/mydiary_login.html'), name='login'),
-  path('mydiary_logout', LogoutView.as_view(template_name='myblog/mydiary_logout.html'), name='logout'),
+  path('mydiary_login', LoginView.as_view(template_name='mydiary/mydiary_login.html'), name='login'),
+  path('mydiary_logout', LogoutView.as_view(template_name='mydiary/mydiary_logout.html'), name='logout'),
 ]
