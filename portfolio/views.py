@@ -6,7 +6,7 @@ from django.views.generic.edit import FormView
 from .forms import ContactForm
 
 class ContactFormView(FormView):
-    template_name = 'portfolio/index.html'
+    template_name = 'portfolio/portfolio_index.html'
     form_class = ContactForm
     success_url = reverse_lazy('contact_result')
 

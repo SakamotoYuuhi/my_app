@@ -1,0 +1,12 @@
+{% extends 'myblog/layout.html' %}
+
+{% block title %}削除確認ページ{% endblock %}
+
+{% block content %}
+  <h1>タイトル名: {{ datas.topic_title }} を削除しますか？</h1>
+  <form method="post">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-danger" value="削除">
+    <a href="{% url 'mydiary_detail' datas.pk %}">戻る</a>
+  </form>
+{% endblock %}

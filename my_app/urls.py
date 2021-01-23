@@ -20,8 +20,9 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('myblog/', include('myblog.urls')),
+    # path('myblog/', include('myblog.urls')),
     path('portfolio/', include('portfolio.urls')),
+    path('mydiary/', include('mydiary.urls')),
 ]
 # 画像アップロード用にsettings.pyにパスを通すために追記
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
