@@ -4,7 +4,7 @@
 
 {% block index %}
   <div class="jumbotron">
-    <h1 class="display-3">坂元のブログ</h1>
+    <h1 class="display-3">坂元の日記</h1>
     <p class="lead">私の最近の出来事や、学んだことのアウトプット用に使っています。<br>
                     ちなみに、好きな言語はPythonなので、このブログもPythonで作成しています。</p>
     <hr class="my-2">
@@ -13,7 +13,7 @@
 
 {% block content %}
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-12">
       <h1 class="display-4 text-primary mb-4">トップページ</h1>
       {% for data in datas %}
         <div class="card mb-3">
@@ -25,9 +25,6 @@
         </div>
       {% endfor %}
       {% include 'mydiary/pagination.html' %}
-    </div>
-    <div class="col-md-3">
-      【その他のアプリケーション】
     </div>
   </div>  
 {% endblock %}
