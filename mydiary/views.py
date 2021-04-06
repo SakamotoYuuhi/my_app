@@ -11,7 +11,7 @@ class IndexView(ListView):
   queryset = MyDiary.objects.order_by('-id').all()
   template_name = 'mydiary/mydiary_index.html' # デフォルトは モデル名_list.html
   context_object_name = 'datas' # デフォルトはobject_list テンプレート側にデータを送る変数
-  paginate_by = 5 # ページネーションする時の1ページあたりの数
+  paginate_by = 10 # ページネーションする時の1ページあたりの数
 
 # 詳細ページの処理
 class DetailView(DetailView): 

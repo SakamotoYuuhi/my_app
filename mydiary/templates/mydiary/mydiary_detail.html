@@ -6,8 +6,8 @@
 {% block content %}
 <h1 class="display-4 text-primary mb-4">詳細ページ</h1>
 <p></p>
-ID:{{ datas.id }} <br>
-タイトル名: {{ datas.topic_title }} <br>
+<!-- ID:{{ datas.id }} <br> -->
+<h3>タイトル名: {{ datas.topic_title }}</h3> <br>
 コンテンツ: <br>{{ datas.content | linebreaksbr }} <br>
 {% if datas.image %}
 写真・画像: <br>

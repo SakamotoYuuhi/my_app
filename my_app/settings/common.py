@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
-    # 'myblog',
+    'myblog',
     'portfolio',
     'mydiary',
 ]
